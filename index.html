@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>TEDxBvrithyderabad::Bvrit Hyderabad College of Engineering for women</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="tedxbvrith, tedx, tedx talks, hyderabad, talks, speakers" name="keywords">
+    <meta content="TEDx is an international community that organizes TED-style events anywhere and everywhere"
+        name="description">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700"
+        rel="stylesheet">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+
+
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    return;
+                }
+            }
+        }
+    </script>
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        h3 {
+            text-align: justify;
+        }
+
+        #contact h3 {
+            text-align: center;
+        }
+
+        #header {
+            background-color: black;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+            color: white;
+        }
+    </style>
+    <style>
+        /* Existing styles */
+        #clockdiv {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #clockdiv div {
+            padding: 10px;
+            border-radius: 3px;
+            background: #333;
+            /* Dark grey background */
+            color: white;
+            width: 100px;
+            /* Ensure all boxes are the same size */
+            height: 100px;
+            /* Ensure all boxes are the same size */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #clockdiv .smalltext {
+            padding-top: 5px;
+            font-size: 16px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            #clockdiv {
+                font-size: 20px;
+            }
+
+            #clockdiv div {
+                width: 80px;
+                /* Adjust size for smaller screens */
+                height: 80px;
+                /* Adjust size for smaller screens */
+            }
+
+            #clockdiv .smalltext {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            #clockdiv {
+                font-size: 16px;
+            }
+
+            #clockdiv div {
+                width: 60px;
+                /* Adjust size for smaller screens */
+                height: 60px;
+                /* Adjust size for smaller screens */
+            }
+
+            #clockdiv .smalltext {
+                font-size: 12px;
+            }
+        }
+    </style>
+
+</head>
+<!--==========================
+    header Section
+  ============================-->
+
+<body id="body" name="body">
+  <div id="navbar-container"></div>
+  <script>
+    function loadNavbar() {
+        fetch('html/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    }
+    loadNavbar();
+</script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="img/image.png" class="img-fluid" alt="Intro Image">
+            </div>
+        </div>
+    </div>
+
+    <!--
+   <section id="intro">
+
+    <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active">
+            <div class="carousel-background"><img class="display" src="img/web.png" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2></h2>
+                <p></p>
+                <a href="#featured-services" class="btn-get-started scrollto"></a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-background"><img class="display" src="img/imgm3.jpg" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2></h2>
+                <p></p>
+                <a href="#featured-services" class="btn-get-started scrollto"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- #intro -->
+    <!-- about section starts here-->
+
+
+
+    <!--==========================
+      register Section
+    ============================-->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="reg" class="wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: #e62b1e"><a href="#">register here</a></h2>
+            </div>
+
+            <div style="background-color:black;">
+                <a href="speakers.html">
+                    <p>Thinkers. Doers. Idea-generators. These are the speakers for the second season of tedxbvrith.</p>
+                </a><br><br>
+                <marquee width="80%" direction="right" height="100px" color="text">
+                    REGISTRATIONS OPEN SOON
+                </marquee>
+                <br>
+                <a href="#">
+                    <button class="btn btn-danger btn-lg w-100"
+                        style="background-color:#E62B1E;color:white;border-color:black;border-width:3.5px; max-width: 600px; font-weight: bold; height: 100px; padding-top: 3px; border-radius: 11px; box-shadow: none;">
+                        REGISTRATIONS OPEN SOON
+                    </button>
+                </a>
+                <br><br>
+
+                <style>
+                    @media (max-width: 2000px) {
+                        button.btn {
+                            font-size: 35px;
+                            height: 80px;
+                        }
+                    }
+
+                    @media (max-width: 768px) {
+                        button.btn {
+                            font-size: 25px;
+                            height: 80px;
+                        }
+                    }
+
+                    @media (max-width: 576px) {
+                        button.btn {
+                            font-size: 20px;
+                            height: 60px;
+                        }
+                    }
+                </style>
+                <!--<p>All the Bvrith students are requested to register online </p><br>-->
+
+            </div>
+        </div><br><br>
+
+
+
+    </section>
+    <!-- #testimonials -->
+
+    <!--==========================
+   About Section
+  ============================-->
+    <section id="about" name="about" class="wow fadeInUp">
+        <!--counter background image-->
+        <div class="container"
+            style="background-image: url('2.gif');background-repeat:no-repeat;background-size:100% 900px;">
+            <div class="row">
+
+                <div class="col-lg-6 content">
+
+                    <div> <br>
+                        <h1 style="color:white;font;font-weight:bold;">COUNTDOWN</h1>
+                        <hr width="50%" align="center" color="white">
+                        <br>
+
+                        <div id="clockdiv" style=color:white;>
+                            <div>
+                                <div class="smalltext"><b>Days</b></div>
+                                <span id="day" class="days">00</span>
+                            </div>
+                            <div>
+                                <div class="smalltext"><b>Hours</b></div>
+                                <span id="hour" class="hours">00</span>
+
+                            </div>
+                            <div>
+                                <div class="smalltext"><b>Minutes</b></div>
+                                <span id="minute" class="minutes">00</span>
+                            </div>
+                            <div>
+                                <div class="smalltext"><b>Seconds</b></div>
+                                <span id="second" class="seconds">00</span>
+                            </div>
+
+                        </div> <br><br>
+                    </div><br><br>
+                </div>
+
+
+                <div class="col-lg-6 content">
+
+                    <br>
+                    <h1 style="color:white;font-weight: bold;">DATE</h1>
+                    <center>
+                        <hr width="50%" align="center" color="white">
+                    </center>
+                    <br>
+                    <h2 style="color: white; font-size=34px;"> 11th April 2025 </h2>
+                    <h2 style="color:white;"><b> starts at 10:00 AM</b> </h2><br>
+                </div>
+            </div>
+        </div>
+        <br><br>
+
+        <script>
+            var deadline = new Date("April 11, 2025 10:00:00").getTime();
+
+            var x = setInterval(function () {
+
+                var now = new Date().getTime();
+                var t = deadline - now;
+                var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((t % (1000 * 60)) / 1000);
+                document.getElementById("day").innerHTML = days;
+                document.getElementById("hour").innerHTML = hours;
+                document.getElementById("minute").innerHTML = minutes;
+                document.getElementById("second").innerHTML = seconds;
+                if (t < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "TIME UP";
+                    document.getElementById("day").innerHTML = '0';
+                    document.getElementById("hour").innerHTML = '0';
+                    document.getElementById("minute").innerHTML = '0';
+                    document.getElementById("second").innerHTML = '0';
+                }
+            }, 1000);
+        </script>
+
+
+
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="row-lg-6 content">
+                    <div class="abc">
+                        <h2 id="titles">WHY TED<sup>x</sup> ?</h2>
+                        <h3>
+                            <!--<b style="font-size: 28px">Imagine</b>&nbsp;--><b
+                                style="font-size: 28px">Imagine</b>&nbsp; yourself walking on your terrace during darks,
+                            sweeping off the many mosquitoes,while juggling between the questions about boundaries of
+                            life. If constraints define boundaries, TED defines essence of having no limits. TED which
+                            means Technology Entertainment and Design, is a defined platform for infinite definitions.
+                            While TED is an international nonprofit organization streaming with talks and creativity
+                            where every little idea of this big universe is valued, TEDx can be considered as its little
+                            sister with the same origin of inheritance, where x means independent. TEDx, just like TED,
+                            welcomes speakers of different styles, types and languages; gives them a space to sharing
+                            their idea, be it a big business management or an informal- 'first flight experience' which
+                            fosters a little lesson of life. So, TEDx, operating over a specific region, working with
+                            ideas as soul , speakers as passion and assembly as vision, invites everyone with a
+                            worthwhile thought, to share and unleash the idea of experience
+                        </h3>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="row-lg-6 content">
+                    <div class="abc">
+                        <h2 id="titles">WE THE BVRITH . .</h2>
+                        <h3>Where the doozy strands of this world are surprisingly diverse, the idealities beyond the
+                            platforms are amazingly braided. Imagination is the space of the beyond; TEDxBVRITH welcomes
+                            it for a spread over its venue. Our speakers unlock
+                            the caps of this space, clinging over the infinites of a brain. Going through disparate
+                            experiences in life can drastically change a person who they are. No matter what the
+                            circumstances may be the eventuality leaves a lasting impression on the person and evince
+                            the reality of uncertainty
+                            and instability the world can bring. One has to take risks in order to reap the benefits, or
+                            play it safe and expect mediocre results. Inspiration comes from no where but from within us
+                            and taking the risks to break anykind
+                            of stereotypes and barriers will ultimately change our lives and sets the new standards,
+                            which also stimulates people around us to do the same.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- #about -->
+    <!--==========================
+      speakers Section
+    ============================-->
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="speakers" class="wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: #e62b1e"><a href="speakers.html">SPEAKERS</a></h2>
+                <!--speakers.html-->
+
+            </div>
+        </div>
+        <div>
+            <a href="speakers.html">
+                <!--speakers.html-->
+                <!-- <p style="color:white;"><b>Thinkers. Doers. Idea-generators. These are the speakers for the second
+                        season of tedxbvrith.</b></p> -->
+            </a>
+            <a href="speakers.html">
+                <!--speakers.html-->
+                <button
+                    style="background-color:#E62B1E;color:white;border-color:#E62B1E;font-weight:bold;height:46px;padding-top:3px;border-radius: 6px;cursor: pointer;">SPEAKERS
+                    WILL BE ANNOUNCED SOON &#8594</button>
+            </a>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+
+        <!--<div class="container">   
+		
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>S.NO</th>
+        <th>Plan of Action</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Address by Dr. T. Vijender Reddy<br>
+Chairman, VCE</td>
+        <td>9:45 AM to 9:50 AM</td>
+      </tr>
+            <td>2</td>
+      <td>Address by Dr. JVR Ravindra<br>
+Principal, VCE
+</td>
+      
+      <td>9:50 AM to 9:55 AM</td>
+    </tr>
+    <td>3</td>
+      <td>Address by Mr. Arvapally Saatvik<br>
+ Organizer, VCE
+
+
+</td>
+      
+      <td>9:55 AM to 10:00 AM</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Talk-1:  Mr. Mahesh Sharma<br>
+Air Force Veteran
+
+</td>
+      
+      <td>10:00 AM to 10:20 AM</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Talk-2:  Mr. Mimicry Srinivos<br>
+Mimicry Artist
+
+</td>
+      
+      <td>10:20 AM to 10:40 AM</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Talk-3:  Ms. Hari Chandana<br>
+IAS
+
+
+</td>
+      
+      <td>10:40 AM to 11:00 AM</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Talk-4: Mr. Chinthakindi Mallesham<br>
+Traditional Weaver
+
+
+</td>
+      
+      <td>11:00 AM to 11:20 AM </td>
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>Talk-5: Mr. Amit Bansal<br>
+ Founder Smart Interviews
+
+
+</td>
+      
+      <td>11:20 AM to 11:40 AM</td>
+    </tr>
+    
+    
+    <tr>
+      <td>9</td>
+      <td>Talk-6: Ms. Ramniet S Mukherjee<br>
+Philanthropist
+
+
+
+</td>
+      
+      <td>11:40 AM to 12:00 PM</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Cultural Activities
+
+
+
+</td>
+      
+      <td>12:00 PM to 12:25 PM</td>
+    </tr><tr>
+      <td bgcolor="grey">11</td>
+      <td bgcolor="grey">Lunch Break</td>
+      
+      <td bgcolor="grey">12:25 PM to 1:30 PM</td>
+    </tr><tr>
+      <td>12</td>
+      <td>Talk-7: Mr. Sujit Jha<br>
+Co-Founder Legal Salah
+
+
+
+
+</td>
+      
+      <td>1:30 PM to 1:50 PM</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Talk-8: Mr. Kranthi R Vardhan<br> 
+Ayurveda Spine Specialist
+
+
+
+
+
+</td>
+      
+      <td>1:50 PM to 2:10 PM</td>
+    </tr><tr>
+      <td>14</td>
+      <td>Talk-9: Prof. Shakeel Ahmed<br>
+Professor
+
+
+
+
+
+</td>
+      
+      <td>2:10 PM to 2:30 PM</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Talk-10: Mr. Nahyr Sehgal<br>
+Innovator
+
+
+
+
+
+</td>
+      
+      <td>2:30 PM to 2:50 PM</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>Talk-11: Mr. Praveen Thomas<br>
+Program Manager-Tutorial Point
+
+
+
+
+
+</td>
+      <td>2:50 PM to 3:10 PM</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Address by Mr. M.D.N. Akash<br>
+Co-Organizer
+
+
+
+
+
+</td>
+      
+      <td>3:10 PM to 3:15 PM</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>Vote of Thanks by Dr. MA Jabbar 
+
+
+
+
+</td>
+      
+      <td>3:15 PM to 3:20 PM</td>
+    </tr>
+        
+        <tr>
+      <td bgcolor="grey">19</td>
+      <td bgcolor="grey">Photo Session </td>
+      
+      </td>
+      
+      <td bgcolor="grey">3:20PM </td>
+    </tr>
+	
+</div>   
+ </section>-->
+
+
+
+
+        <!-- #testimonials -->
+        <!--==========================
+      team Section
+    ============================-->
+        <section id="speakers" class="wow fadeInUp">
+            <div class="container">
+                <div class="section-header">
+                    <h2 style="color: #e62b1e">OUR TEAM</h2>
+                </div>
+            </div>
+            <div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <a href="team.html">
+                                <p style="color:white; text-align: center;"><b>
+                                        We are a synergy of collaboration. We share and interpret ideas. Each of us
+                                        brings unique
+                                        skills to the table. Together, we strive to unleash the potential of Technology,
+                                        Entertainment, and Design. We
+                                        are a TEAM.
+                                    </b></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="team.html">
+                    <button
+                        style="background-color:#E62B1E;color:white;border-color:#E62B1E;font-weight:bold;height:46px;padding-top:3px;border-radius: 6px;cursor: pointer;">OUR
+                        TEAM &#8594</button>
+                </a>
+            </div>
+
+
+
+        </section>
+        <!-- #testimonials -->
+
+
+        <!--==========================
+      media Section
+    ============================-->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <section id="portfolio" class="wow fadeInUp">
+            <!-- name="portfolio" -->
+            <div class="container">
+                <div class="section-header">
+                    <h2 style="color: #e62b1e">MEDIA</h2>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row no-gutters">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="portfolio-item wow fadeInUp">
+
+                            <a href="img/SMB(2).jpg" class="portfolio-popup">
+                                <img src="img/SMB(2).jpg" alt="">
+                                <!-- <a href="img/BVRITH CLG pic 1" class="portfolio-popup">
+                                <img src="img/BVRITH CLG pic 1" class="img-fluid" alt="">
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <h2 class="wow fadeInUp"></h2>
+                                    </div>
+                                </div>
+                            </a> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="portfolio-item wow fadeInUp">
+                            <a href="img/SMB Seminar hall 1.jpg" class="portfolio-popup">
+                                <img src="img/SMB Seminar hall 1.jpg" alt="">
+                                <!-- <a href="img/seminar hall.jpg" class="portfolio-popup">
+                                <img src="img/seminar hall.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <h2 class="wow fadeInUp"></h2>
+                                    </div>
+                                </div>
+                            </a> -->
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="portfolio-item wow fadeInUp">
+
+                            <a href="img/SMB Seminar hall 2.jpg" class="portfolio-popup">
+                                <img src="img/SMB Seminar hall 2.jpg" alt="">
+
+                                <!-- <a href="img/seminar hall2.jpg" class="portfolio-popup">
+                                <img src="img/seminar hall2.jpg" class="img-fluid" alt="">
+
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <h2 class="wow fadeInUp"></h2>
+                                    </div>
+                                </div>
+                            </a> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="portfolio-item wow fadeInUp">
+                            <a href="img/bvrith img.jpeg" class="portfolio-popup">
+                                <img src="img/bvrith img.jpeg" class="img-fluid" alt="">
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <h2 class="wow fadeInUp"></h2>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="portfolio-item wow fadeInUp">
+                            <a href="img/BVRITH CLG pic 1" class="portfolio-popup">
+                                <img src="#" class="img-fluid" alt="">
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <h2 class="wow fadeInUp"></h2>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <section>
+            <iframe width="400" height="200" src="https://www.youtube.com/embed/m84SDEhsqX8"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+            <iframe width="400" height="200" src="https://www.youtube.com/embed/wpWRUJn0IpU"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+            <iframe width="400" height="200" src="https://www.youtube.com/embed/6NhL5s_JWD4"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+            <iframe width="400" height="200" src="https://www.youtube.com/embed/6ikhtCCxRt0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+            <iframe width="400" height="200" src="https://www.youtube.com/embed/BmDOfSM5W3E"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+            <iframe width="400" height="200" src="https://www.youtube.com/embed/CbVK4hPG3uA"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+            <iframe width="400" height="200" src="https://www.youtube.com/embed/PNP5-jzTnGY"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+            <iframe width="400" height="200" src="https://www.youtube.com/embed/X-GDLZkSAiM"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+            <iframe width="400" height="200" src="https://www.youtube.com/embed/YMieLeC5H9U"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+            <iframe width="400" height="200" src="https://www.youtube.com/embed/f-CsfDsGrNc"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </section>
+        <!-- #media -->
+        <!--==========================
+      partners Section
+    ============================-->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <section id="clients" name="clients" class="wow fadeInUp">
+            <div class="container">
+                <div class="section-header">
+                    <h2 style="color: #e62b1e">PARTNERS</h2>
+                    <p style="color:white;"><b>Our improvisational entity of the ideas worth spreading adores the
+                            sponsorship support for this build up.<br>Join us for this imagination festive; help us
+                            build the beyonds.</b></p>
+                </div>
+
+                <!--<div class="owl-carousel clients-carousel">
+          <img src="img/clients/client-1.png" alt="">
+          <img src="img/clients/client-2.png" alt="">
+          <img src="img/clients/client-3.png" alt="">
+          <img src="img/clients/client-4.png" alt="">
+          <img src="img/clients/client-5.png" alt="">
+          <img src="img/clients/client-6.png" alt="">
+          <img src="img/clients/client-7.png" alt="">
+          <img src="img/clients/client-8.png" alt="">
+        </div>-->
+
+            </div>
+        </section>
+        <!-- #partners -->
+        <!--==========================
+      Our Team Section
+    ============================-->
+        <!--==========================
+      Contact Section
+    ============================-->
+        <br>
+        <br>
+        <br>
+        <br>
+        <section id="contact" class="wow fadeInUp">
+
+        </section>
+        <!-- #contact -->
+        <div id="footer-container"></div>
+        <script>
+            fetch('html/footer.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer-container').innerHTML = data);
+        </script>
+        </main>
+
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/jquery/jquery-migrate.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/superfish/hoverIntent.js"></script>
+        <script src="lib/superfish/superfish.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+        <script src="lib/sticky/sticky.js"></script>
+
+        <!-- Contact Form JavaScript File -->
+        <script src="contactform/contactform.js"></script>
+
+        <!-- Template Main Javascript File -->
+        <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+body {
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar-container {
+  margin-bottom: 30px;
+}
+
+.timeline-container {
+  position: sticky;
+  top: 0;
+  background: black;
+  padding: 20px 0;
+  z-index: 100;
+  text-align: center;
+}
+
+.timeline ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline ul li {
+  color: gray;
+  font-size: 22px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.timeline ul li.active {
+  color: white;
+  font-weight: bold;
+  border-bottom: 3px solid red;
+}
+
+.profile-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  padding: 20px 0;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.profile:hover {
+  transform: scale(1.02);
+}
+
+/* Ensure the image container is square */
+.profile img {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid red;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+.profile img:hover {
+  filter: grayscale(0%);
+}
+
+.profile div {
+  padding-left: 20px;
+  flex: 1;
+}
+
+.profile h2 {
+  color: red;
+  margin: 0 0 5px 0;
+}
+
+.profile h4 {
+  margin: 5px 0;
+  color: white;
+  font-weight: normal;
+}
+
+.profile p {
+  color: lightgray;
+  font-size: 14px;
+}
+
+#footer-container {
+  margin-top: 40px;
+}

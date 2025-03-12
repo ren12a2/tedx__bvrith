@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        /* Ensuring images and content are of equal height */
+        .section {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: justify;
+        }
+
+        .section img {
+            width: 40%;
+            object-fit: cover;
+            border-radius: 10px;
+            height: 100%;
+        }
+
+        .section .text {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Headings */
+        h2 {
+            color: red;
+            font-size: 28px;
+            text-transform: uppercase;
+        }
+
+        /* FAQs */
+        .faq {
+            margin-top: 50px;
+        }
+
+        .faq h2 {
+            color: red;
+        }
+
+        .faq-item {
+            background: #333;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .faq-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+            padding-top: 10px;
+            color: red;
+            font-size: 16px;
+        }
+
+        .toggle-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: red;
+            margin-left: 10px;
+        }
+
+        /* RESPONSIVENESS */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 30px 0;
+            }
+
+            .section {
+                flex-direction: column;
+                align-items: center;
+                text-align: justify;
+                gap: 20px;
+            }
+
+            .section img {
+                width: 90%;
+                height: auto;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .section .text {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <script>
+        fetch('../html/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <div class="container">
+        <div class="section">
+            <div class="text">
+                <h2>WHY TEDx?</h2>
+                <p>Imagine yourself standing on your terrace under the vast night sky, swatting away mosquitoes, lost in
+                    thoughts about the boundaries of life. If constraints define limits, TED embodies the essence of
+                    limitless possibilities.</p>
+                <p>TED, which stands for <span style="color: red; font-weight: bold;">Technology, Entertainment, and
+                        Design</span>, is a platform for infinite ideas. As an international nonprofit organization, TED
+                    thrives on creativity, embracing diverse perspectives, and giving a voice to every idea—big or
+                    small. TEDx, its independently organized counterpart, shares the same spirit, where the ‘x’
+                    signifies its autonomy. TEDx provides a stage for speakers of all styles, backgrounds, and
+                    languages, encouraging them to share insights ranging from groundbreaking business innovations to
+                    deeply personal life experiences.</p>
+                <p>TEDx, deeply rooted in the philosophy of <span style="color: red;">"ideas as the soul, speakers as
+                        passion, and assembly as vision"</span>, invites everyone with a meaningful thought to step
+                    forward, break barriers, and inspire change.</p>
+            </div>
+            <img src="../img/media/ted.jpg" alt="Why TEDx Image">
+        </div>
+
+        <div class="section">
+            <img src="../img/poster/tedxx.jpg" alt="We The BVRITH Image">
+            <div class="text">
+                <h2>WE THE BVRITH...</h2>
+                <p>In a world woven with countless perspectives, TEDxBVRITH stands as a platform where imagination meets
+                    expression. Our speakers break open the caps of their minds, unleashing thoughts that challenge
+                    norms, spark inspiration, and encourage fearless exploration.</p>
+                <p>Life’s experiences shape us—sometimes drastically—leading us down paths we never anticipated. The
+                    unpredictability of circumstances pushes us beyond our comfort zones, forcing us to make a choice:
+                    play it safe and accept the ordinary, or take a risk and redefine the possible. <span
+                        style="color: red;">True inspiration lies in daring to defy limitations, shattering stereotypes,
+                        and setting new standards.</span></p>
+                <p>At TEDxBVRITH, we believe in fostering that courage—the courage to challenge the unknown, to inspire
+                    others, and to create an impact that lasts beyond the stage.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>FAQs</h2>
+            <div class="faq-item">
+                <div class="faq-item-header" onclick="toggleAnswer(this)">
+                    <strong>1. Is the event in online or offline mode?</strong>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">The event will be held in offline mode.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-item-header" onclick="toggleAnswer(this)">
+                    <strong>2. Will there be a screening of the event at the location?</strong>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">Yes, there will be screenings of the event inside the institute premises.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-item-header" onclick="toggleAnswer(this)">
+                    <strong>3. Can the audience interact with the speaker?</strong>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">No, there will be no Q&A session or interaction with the speaker as per TEDx
+                    rules.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-item-header" onclick="toggleAnswer(this)">
+                    <strong>4. Will there be charges for online mode?</strong>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">There will be no charges for students.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-item-header" onclick="toggleAnswer(this)">
+                    <strong>5. How do I apply to be a speaker at the event?</strong>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">If you have an ‘idea worth spreading’ that aligns with our theme, please contact
+                    us at tedxbvrith@bvrithyderabad.edu.in or reach out via our social media pages.</div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script>
+        function toggleAnswer(element) {
+            var answer = element.parentElement.querySelector('.faq-answer');
+            var icon = element.querySelector('.toggle-icon');
+            var isVisible = answer.style.display === 'block';
+
+            answer.style.display = isVisible ? 'none' : 'block';
+            icon.textContent = isVisible ? '+' : '-';
+        }
+    </script>
+
+    <div id="footer-container"></div>
+    <script>
+        fetch('../html/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+</body>
+
+</html>

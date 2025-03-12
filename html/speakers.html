@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline Profiles</title>
+  <link rel="stylesheet" href="../css/speaker.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+  <script>
+    function loadNavbar() {
+      fetch('../html/navbar.html') // Corrected path
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+    }
+    loadNavbar();
+  </script>
+  <div class="timeline-container">
+    <div class="timeline">
+      <ul>
+        <li onclick="changeYear(2025)" id="y-2025" class="active">2025</li>
+        <li onclick="changeYear(2024)" id="y-2024">2024</li>
+      </ul>
+    </div>
+
+    <div class="profile-container" id="profile-container">
+      <!-- Profiles will be loaded dynamically -->
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div id="footer-container"></div>
+  <script>
+    fetch('../html/footer.html') // Corrected path
+      .then(response => response.text())
+      .then(data => document.getElementById('footer-container').innerHTML = data);
+  </script>
+  <script src="../js/speaker.js"></script>
+
+</body>
+
+</html>
