@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Season</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        h2 {
+            color: red;
+            font-size: 32px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .video-grid iframe {
+            width: 100%;
+            height: 280px;
+            /* Increased height */
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgba(255, 0, 0, 0.3);
+            /* Reduced shadow */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .video-grid iframe:hover {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 30px 0;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-grid iframe {
+                height: 250px;
+                /* Adjusted for smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+    <script>
+        fetch('../html/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <div class="container">
+        <h2>Past Season Highlights</h2>
+        <section class="video-grid">
+            <iframe src="https://www.youtube.com/embed/m84SDEhsqX8" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/wpWRUJn0IpU" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/6NhL5s_JWD4" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/6ikhtCCxRt0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/BmDOfSM5W3E" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/CbVK4hPG3uA" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/PNP5-jzTnGY" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/X-GDLZkSAiM" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/YMieLeC5H9U" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/f-CsfDsGrNc" allowfullscreen></iframe>
+        </section>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Footer -->
+    <div id="footer-container"></div>
+    <script>
+        fetch('../html/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+
+</body>
+
+</html>

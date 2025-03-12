@@ -23,15 +23,14 @@
             padding: 50px 0;
         }
 
-        /* Ensuring images and content are of equal height */
+        /* Section Layout */
         .section {
             display: flex;
-            align-items: stretch;
+            align-items: center;
             justify-content: space-between;
             gap: 30px;
             margin-bottom: 50px;
             padding: 20px;
-            border-radius: 10px;
             text-align: justify;
         }
 
@@ -42,11 +41,18 @@
             height: 100%;
         }
 
+        /* Red-bordered text box */
         .section .text {
             width: 55%;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            padding: 20px;
+            border: 2px solid red;
+            /* Red border */
+            border-radius: 10px;
+            background: rgba(255, 0, 0, 0.1);
+            /* Slight red tint for contrast */
         }
 
         /* Headings */
@@ -56,7 +62,7 @@
             text-transform: uppercase;
         }
 
-        /* FAQs */
+        /* FAQ Section */
         .faq {
             margin-top: 50px;
         }
@@ -66,7 +72,7 @@
         }
 
         .faq-item {
-            background: #333;
+            background: #222;
             margin-bottom: 10px;
             padding: 15px;
             border-radius: 5px;
@@ -75,6 +81,23 @@
             flex-direction: column;
             text-align: left;
         }
+
+        /* Removing the red border from FAQ answers */
+        .faq-answer {
+            display: none;
+            padding-top: 10px;
+            color: red;
+            font-size: 16px;
+        }
+
+        /* Keeping the toggle icon styling */
+        .toggle-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: red;
+            margin-left: 10px;
+        }
+
 
         .faq-item-header {
             display: flex;
@@ -90,13 +113,6 @@
             font-size: 16px;
         }
 
-        .toggle-icon {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: red;
-            margin-left: 10px;
-        }
-
         /* RESPONSIVENESS */
         @media (max-width: 768px) {
             .container {
@@ -107,15 +123,12 @@
             .section {
                 flex-direction: column;
                 align-items: center;
-                text-align: justify;
                 gap: 20px;
             }
 
             .section img {
                 width: 90%;
                 height: auto;
-                margin: 0 auto;
-                display: block;
             }
 
             .section .text {
@@ -126,6 +139,7 @@
 </head>
 
 <body>
+    <!-- Navbar -->
     <div id="navbar-container"></div>
     <script>
         fetch('../html/navbar.html')
@@ -136,6 +150,7 @@
             .catch(error => console.error('Error loading navbar:', error));
     </script>
 
+    <!-- About Sections -->
     <div class="container">
         <div class="section">
             <div class="text">
@@ -146,13 +161,10 @@
                 <p>TED, which stands for <span style="color: red; font-weight: bold;">Technology, Entertainment, and
                         Design</span>, is a platform for infinite ideas. As an international nonprofit organization, TED
                     thrives on creativity, embracing diverse perspectives, and giving a voice to every idea—big or
-                    small. TEDx, its independently organized counterpart, shares the same spirit, where the ‘x’
-                    signifies its autonomy. TEDx provides a stage for speakers of all styles, backgrounds, and
-                    languages, encouraging them to share insights ranging from groundbreaking business innovations to
-                    deeply personal life experiences.</p>
-                <p>TEDx, deeply rooted in the philosophy of <span style="color: red;">"ideas as the soul, speakers as
-                        passion, and assembly as vision"</span>, invites everyone with a meaningful thought to step
-                    forward, break barriers, and inspire change.</p>
+                    small.</p>
+                <p>TEDx provides a stage for speakers of all styles, backgrounds, and languages, encouraging them to
+                    share insights ranging from groundbreaking business innovations to deeply personal life experiences.
+                </p>
             </div>
             <img src="../img/media/ted.jpg" alt="Why TEDx Image">
         </div>
@@ -166,14 +178,13 @@
                     norms, spark inspiration, and encourage fearless exploration.</p>
                 <p>Life’s experiences shape us—sometimes drastically—leading us down paths we never anticipated. The
                     unpredictability of circumstances pushes us beyond our comfort zones, forcing us to make a choice:
-                    play it safe and accept the ordinary, or take a risk and redefine the possible. <span
-                        style="color: red;">True inspiration lies in daring to defy limitations, shattering stereotypes,
-                        and setting new standards.</span></p>
+                    play it safe and accept the ordinary, or take a risk and redefine the possible.</p>
                 <p>At TEDxBVRITH, we believe in fostering that courage—the courage to challenge the unknown, to inspire
                     others, and to create an impact that lasts beyond the stage.</p>
             </div>
         </div>
 
+        <!-- FAQ Section -->
         <div class="faq">
             <h2>FAQs</h2>
             <div class="faq-item">
@@ -205,16 +216,10 @@
                 </div>
                 <div class="faq-answer">There will be no charges for students.</div>
             </div>
-            <div class="faq-item">
-                <div class="faq-item-header" onclick="toggleAnswer(this)">
-                    <strong>5. How do I apply to be a speaker at the event?</strong>
-                    <span class="toggle-icon">+</span>
-                </div>
-                <div class="faq-answer">If you have an ‘idea worth spreading’ that aligns with our theme, please contact
-                    us at tedxbvrith@bvrithyderabad.edu.in or reach out via our social media pages.</div>
-            </div>
         </div>
     </div>
+    <br>
+    <br>
     <br>
     <br>
     <br>
@@ -232,12 +237,14 @@
         }
     </script>
 
+    <!-- Footer -->
     <div id="footer-container"></div>
     <script>
         fetch('../html/footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer-container').innerHTML = data);
     </script>
+
 </body>
 
 </html>
