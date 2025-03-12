@@ -2,10 +2,8 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,6 +23,103 @@
     <link href="css/style.css" rel="stylesheet">
     <title>Team - TEDxBVRITH</title>
     <style>
+        /* Background animation styles */
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            /* Remove overflow: hidden; to enable scrolling */
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Ensure it stays behind the content */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.6;
+            /* Softens background */
+        }
+
+        .team-text {
+            font-size: 100px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: rgb(200, 0, 0);
+            text-shadow:
+                0 0 5px red,
+                0 0 15px darkred;
+            transform: skewY(-10deg);
+            white-space: nowrap;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            opacity: 0.8;
+            animation: waveMotion 5s ease-in-out infinite;
+        }
+
+        @keyframes waveMotion {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-20px) rotate(-1deg);
+            }
+
+            50% {
+                transform: translateY(20px) rotate(1deg);
+            }
+
+            75% {
+                transform: translateY(-10px) rotate(-1deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        .team-text:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .team-text:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .team-text:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .team-text:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .team-text:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        .team-text:nth-child(6) {
+            animation-delay: 1s;
+        }
+
+        .team-text:nth-child(7) {
+            animation-delay: 1.2s;
+        }
+
+        /* Rest of the styles are the same as your main code */
         #header {
             background-color: black;
         }
@@ -67,7 +162,6 @@
             transform: scale(1.15);
         }
 
-
         .social a .ig:hover {
             transform: scale(1.15);
         }
@@ -85,16 +179,6 @@
             align-items: center;
             color: #fff;
         }
-
-        /* .social {
-            width: 50%;
-            height: 50px;
-            position: absolute;
-            z-index: 15;
-            bottom: 0%;
-            display: flex;
-            justify-content: flex-end;
-        } */
 
         .card-body.center {
             display: flex;
@@ -129,885 +213,926 @@
         .main {
             padding: 13px;
             margin-top: 50px;
-            height: 1500px;
-            /* Used in this example to enable scrolling */
+            height: auto;
+            /* Allow the content to determine the height */
         }
 
         .null {
             display: none;
             visibility: hidden;
         }
+
+        /* Existing CSS styles */
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        /* New styles for the card and overlay */
+        .card {
+            position: relative;
+            overflow: hidden;
+            border: none;
+            background: none;
+            margin-bottom: 20px;
+            /* Space between cards */
+        }
+
+        .card-img-top {
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            /* Translucent black background */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            transition: opacity 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: red;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .social a:hover {
+            color: #E62B1E;
+            /* Red color on hover */
+        }
     </style>
 </head>
 
 <body style="background-color: black;">
-    <header id="header">
-        <div class="container">
-            <div id="logo" class="pull-left">
-                <h1 style="float: left"><a href="../index.html"><img src="img/tedx.jpg" height="60px" width="200px"></a>
-                </h1>
-            </div>
-            <nav style="float: right;" id="nav-menu-container">
-                <ul class="nav-menu">
-                    <li class="menu-active"><a href="../index.html#body">HOME</a></li>
-                    <li><a href="../index.html#about">ABOUT</a></li>
-                    <li><a href="../index.html#portfolio">MEDIA</a></li>
-                    <li><a href="../index.html#clients">PARTNERS</a></li>
-                    <li><a href="../index.html#contact">VENUE</a></li>
-                    <li>
-                        <form action=html/team.html>
-                            <input type="submit" value="TEAM"
-                                style="background-color:#E62B1E;color:white;border-color:#E62B1E;font-weight:bold;width:100px;height:36px;padding-top:3px;border-radius: 6px;">
-                        </form>
-                    </li>
-                    <li>
-                        <form action="html/speakers.html">
-                            <input type="submit" value="SPEAKERS"
-                                style="background-color:#E62B1E;color:white;border-color:#E62B1E;font-weight:bold;height:36px;padding-top:3px;border-radius: 6px;padding-right:12px;padding-left:12px">
-                        </form>
-                    </li>
-                    <li>
-                        <form
-                            action="https://docs.google.com/forms/d/1x0r8qHoKBNAR-ZZk57FGWsvXq210hbM8qch7pGoARME/edit?ts=656f1f5d">
-                            <input type="submit" value="REGISTER"
-                                style="background-color:#E62B1E;color:white;border-color:#E62B1E;font-weight:bold;width:100px;height:36px;padding-top:3px;padding-left:3px;padding-right:3px;border-radius: 6px;">
-                        </form>
-                    </li>
-                    <!--<li>
-                        <form action="#">
-                            <input type="submit" value="TICKETS" style="background-color:#E62B1E;color:white;border-color:#E62B1E;font-weight:bold;height:36px;padding-top:3px;border-radius: 6px;"></form>
-                    </li>-->
-                    <li style="color:grey; padding-top:10px">|</li>
-                    <li class="social-links">
-                    </li>
-                    <li>
-                        <a href="https://instagram.com/tedxbvrithyd?igshid=d2todTlnN2w3aGNn"><i
-                                class="fa fa-instagram"></i></a>
-                    </li>
-                    <a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </li>
-                </ul>
-            </nav>
-            <!-- #nav-menu-container -->
-        </div>
-    </header>
+
+    <!-- Background animation -->
+    <div class="background">
+        <div class="team-text">TEAM TEAM TEAM TEAM TEAM TEAM</div>
+        <div class="team-text">TEAM TEAM TEAM TEAM TEAM TEAM</div>
+        <div class="team-text">TEAM TEAM TEAM TEAM TEAM TEAM</div>
+        <div class="team-text">TEAM TEAM TEAM TEAM TEAM TEAM</div>
+        <div class="team-text">TEAM TEAM TEAM TEAM TEAM TEAM</div>
+        <div class="team-text">TEAM TEAM TEAM TEAM TEAM TEAM</div>
+        <div class="team-text">TEAM TEAM TEAM TEAM TEAM TEAM</div>
+    </div>
+    <div id="navbar-container"></div>
+    <script>
+        function loadNavbar() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        }
+        loadNavbar();
+    </script>
     <div class="main">
-        <center>
-            <h1 style="color:white;font-family: Times New Roman;font-weight:bold;font-size:600;">CORE TEAM</h1>
-        </center><br>
-        <div class="container">
+        <div class="main">
+            <center>
+                <h1 style="color:white;font-family: Times New Roman;font-weight:bold;font-size:600;">CORE TEAM</h1>
+            </center><br>
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/principal mam(1).jpg" alt="Card image cap"
-                                style="height: 200;">
-                            <div class="card-body">
-                                <h5 class="card-title">Dr. KVN Sunitha</h5>
-                                <p class="card-text">Principal</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://instagram.com/sunithakvn?igshid=MTNiYzNiMzkwZA==">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://in.linkedin.com/in/dr-kvn-sunitha-ba3a1a29">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
+                <div class="card-deck">
+                    <div class="card">
+                        <img class="card-img-top" src="img/team_pics/principal mam(1).jpg" alt="Card image cap"
+                            style="height: 200;">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. KVN Sunitha</h5>
+                            <p class="card-text">Principal</p>
+                        </div>
+                        <div class="card-body center">
+                            <div class="social">
+                                <a href="https://instagram.com/sunithakvn?igshid=MTNiYzNiMzkwZA==">
+                                    <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </a>
+                                <a href="https://in.linkedin.com/in/dr-kvn-sunitha-ba3a1a29">
+                                    <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Vice_Principal_Sir.png" alt="Card image cap"
-                                style="height: 200;">
-                            <div class="card-body">
-                                <h5 class="card-title">Dr. Chava Sunil Kumar</h5>
-                                <p class="card-text">Vice Principal</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/ursunil259/">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://in.linkedin.com/in/dr-chava-sunil-kumar-22957952">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
+                    <div class="card">
+                        <img class="card-img-top" src="img/team_pics/vice principal sir.jpg" alt="Card image cap"
+                            style="height: 200;">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Chava Sunil Kumar</h5>
+                            <p class="card-text">Vice Principal</p>
+                        </div>
+                        <div class="card-body center">
+                            <div class="social">
+                                <a href="https://www.instagram.com/ursunil259/">
+                                    <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </a>
+                                <a href="https://in.linkedin.com/in/dr-chava-sunil-kumar-22957952">
+                                    <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/cse hod mam.jpg" alt="Card image cap"
-                                style="height: 200;">
-                            <div class="card-body">
-                                <h5 class="card-title">Dr. Sreevani Maddukuri</h5>
-                                <p class="card-text">HOD-CSE</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href=" ">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href=" ">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
+                    <div class="card">
+                        <img class="card-img-top" src="img/team_pics/cse hod mam.jpg" alt="Card image cap"
+                            style="height: 200;">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Sreevani Maddukuri</h5>
+                            <p class="card-text">HOD-CSE</p>
+                        </div>
+                        <div class="card-body center">
+                            <div class="social">
+                                <a href=" ">
+                                    <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </a>
+                                <a href=" ">
+                                    <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                </a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <br><br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/tara sir.jpg" alt="Card image cap"
-                                style="height: 200;">
-                            <div class="card-body">
-                                <h5 class="card-title">Tara Sai Kumar</h5>
-                                <p class="card-text">faculty co-ordinator</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="#">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Sruthi_Varma_Organizer.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Sai Sruthi Srivatsavayi</h5>
-                                <p class="card-text">Organizer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a
-                                        href="https://www.instagram.com/sruthiii.varma?igsh=YXhpeGk3OXJiMDcz&utm_source=qr">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a
-                                        href="https://www.linkedin.com/in/sai-sruthi-srivatsavayi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Khyathi_Co-Organiser.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">D.Khyathi </h5>
-                                <p class="card-text">Co - Organizer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a
-                                        href="https://www.instagram.com/khyathireddydasari_?igsh=ZXQ4bnJjZDd1emVs&utm_source=qr">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a
-                                        href="https://www.linkedin.com/in/khyathi-dasari-952703254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br><br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="img\team_pics\CRF001_AKASHMALLAREDDY_PHOTO.jpg"
-                                alt="Card image cap" style="height: 200;">
-                            <div class="card-body ">
-                                <h5 class="card-title">Mr. M. D. N. Akash</h5>
-                                <p class="card-text">Curator</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://instagram.com/akash_mallareddy?igshid=YmMyMTA2M2Y=">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/akash-rao-mallareddy-055520168/">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Pavitraa_G-Executive_Producer.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">G.Pavitraa </h5>
-                                <p class="card-text">Executive Producer </p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="#">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/pavitraa-g/">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><br><br>
+                </div> <br><br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="img/team_pics/tara sir.jpg" alt="Card image cap"
+                                    style="height: 200;">
+                                <div class="card-body ">
 
-            <center>
-                <h1 style="color:white;font-family: Times New Roman;font-weight:bold;font-size:600;">WEB
-                    DEVELOPMENT
-                    TEAM</h1>
-            </center>
-            <br><br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Kosuri_Lakshmi_Indu_WebDev.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Kosuri Lakshmi Indu</h5>
-                                <p class="card-text">Lead</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/kosuri-indu/">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
+                                    <h5 class="card-title">Tara Sai Kumar</h5>
+                                    <p class="card-text">Faculty co-ordinator</p>
+                                </div>
+                                <div class="card-body center">
+                                    <div class="social">
+                                        <a href="https://instagram.com/akash_mallareddy?igshid=YmMyMTA2M2Y=">
+                                            <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                        </a>
+                                        <a href="https://www.linkedin.com/in/akash-rao-mallareddy-055520168/">
+                                            <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Renee_Bethapudy_WebDev.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Renee-Bethapudy</h5>
-                                <p class="card-text">Co-Lead</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="#">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/renee-bethapudy-a31576259">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="img/team_pics/Sruthi_Varma_Organizer.jpg"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sai Sruthi Srivatsavayi</h5>
+                                    <p class="card-text">Organizer</p>
+                                </div>
+                                <div class="card-body center">
+                                    <div class="social">
+                                        <a
+                                            href="https://www.instagram.com/sruthiii.varma?igsh=YXhpeGk3OXJiMDcz&utm_source=qr">
+                                            <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                        </a>
+                                        <a
+                                            href="https://www.linkedin.com/in/sai-sruthi-srivatsavayi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                                            <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Vazrala_Akshaya_Reddy_WebDev.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Vazrala Akshaya Reddy</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/akshaya_vazrala?igsh=enJrdTBnMnlyZ3d0">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/akshaya-reddy-vazrala-25a2622ab">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="img/team_pics/Khyathi_Co-Organiser.png"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">D.Khyathi </h5>
+                                    <p class="card-text">Co - Organizer</p>
+                                </div>
+                                <div class="card-body center">
+                                    <div class="social">
+                                        <a
+                                            href="https://www.instagram.com/khyathireddydasari_?igsh=ZXQ4bnJjZDd1emVs&utm_source=qr">
+                                            <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                        </a>
+                                        <a
+                                            href="https://www.linkedin.com/in/khyathi-dasari-952703254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                                            <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> <br><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img\team_pics\CRF001_AKASHMALLAREDDY_PHOTO.jpg"
+                                        alt="Card image cap" style="height: 200;">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Mr. M. D. N. Akash</h5>
+                                        <p class="card-text">Curator</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="https://instagram.com/akash_mallareddy?igshid=YmMyMTA2M2Y=">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/akash-rao-mallareddy-055520168/">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Pavitraa_G-Executive_Producer.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">G.Pavitraa </h5>
+                                        <p class="card-text">Executive Producer </p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="#">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/pavitraa-g/">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><br>
 
-                </div>
-                <br>
-                <br>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Lasya_WebDev.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Landu Lasya</h5>
-                                <p class="card-text">Volunteer</p>
+                    <center>
+                        <h1 style="color:white;font-family: Times New Roman;font-weight:bold;font-size:600;">WEB
+                            DEVELOPMENT TEAM</h1>
+                    </center>
+                    <br><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Kosuri_Lakshmi_Indu_WebDev.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Kosuri Lakshmi Indu</h5>
+                                        <p class="card-text">Lead</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/kosuri-indu/">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/lasya._.9?igsh=MTlob3QyZ3JhOWpxcQ==">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a
-                                        href="https://www.linkedin.com/in/lasya-landu-85b92025b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Renee_Bethapudy_WebDev.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Renee-Bethapudy</h5>
+                                        <p class="card-text">Co-Lead</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="#">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/renee-bethapudy-a31576259">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Lasya_WebDev(1).jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Landu Lasya</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="https://www.instagram.com/lasya._.9?igsh=MTlob3QyZ3JhOWpxcQ==">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a
+                                                href="https://www.linkedin.com/in/lasya-landu-85b92025b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Ramavath_Bhanu_Sri_Rathod_WebDev.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">R Bhanu Sri Rathod</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/bhanu_sri_rathod?igsh=NjdpMDBxNnhoaXVr">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a
-                                        href="https://www.linkedin.com/in/bhanu-sri-rathod-b7554b293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Vazrala_Akshaya_Reddy_WebDev.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Vazrala Akshaya Reddy</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="https://www.instagram.com/akshaya_vazrala?igsh=enJrdTBnMnlyZ3d0">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/akshaya-reddy-vazrala-25a2622ab">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Ramavath_Bhanu_Sri_Rathod_WebDev.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">R Bhanu Sri Rathod</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="https://www.instagram.com/bhanu_sri_rathod?igsh=NjdpMDBxNnhoaXVr">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a
+                                                href="https://www.linkedin.com/in/bhanu-sri-rathod-b7554b293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/AnshuBonagiri_webdevelopment.jpeg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Anshu Bonagiri</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href=" ">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/anshu-bonagiri-6b4b9b28a">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Add another card here if needed -->
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/AnshuBonagiri_webdevelopment.jpeg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Anshu Bonagiri</h5>
-                                <p class="card-text">Volunteer</p>
+                    <br><br>
+                    <center>
+                        <h1 style="color:white;font-family: Times New Roman;font-weight:bold;font-size:600;">PRODUCTION
+                            AND COMMUNICATIONS TEAM</h1>
+                    </center><br><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Adepu_Srujana_Prod_Comm(1).jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">A Srujana</h5>
+                                        <p class="card-text">Lead</p>
+                                    </div>
+                                    <div class="card-body center center">
+                                        <div class="social">
+                                            <a
+                                                href="https://www.instagram.com/srujanaammu_09?igsh=MXVlYTl2Ymo5MzBheg%3D%3D&utm_source=qr">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/srujana-adepu-756367259/">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href=" ">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/anshu-bonagiri-6b4b9b28a">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Megna_Varma_Prod_Comm.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Megna Varma</h5>
+                                        <p class="card-text">Co-Lead</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="https://www.instagram.com/megna.varma31?igsh=MWJ6ZHQzaTFva2wyMg==">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a
+                                                href="https://www.linkedin.com/in/megana-laxmi-datla-5b0394259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Madhuri_Popuri_Prod_Comm.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">P Madhuri</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a
+                                                href="https://www.instagram.com/madhuri_chowdary_popuri?igsh=MTM5dGswMjNtbjFuOQ==">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/madhuri-popuri">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Add another card here if needed -->
-                    </div>
-                </div>
-            </div>
-            <br><br>
-            <center>
-                <h1 style="color:white;font-family: Times New Roman;font-weight:bold;font-size:600;">PRODUCTION
-                    AND
-                    COMMUNICATIONS TEAM</h1>
-            </center><br><br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Adepu_Srujana_Prod_Comm(1).jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">A Srujana</h5>
-                                <p class="card-text">Lead</p>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top"
+                                        src="img/team_pics/N_Sathvika_Production_Communication.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">N Sathvika</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a
+                                                href="https://www.instagram.com/sathvika_nethi?igsh=MWRreXZoYTZwdWtmdg==">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/nethi-sathvika-a7969a259/">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body center center">
-                                <div class="social">
-                                    <a
-                                        href="https://www.instagram.com/srujanaammu_09?igsh=MXVlYTl2Ymo5MzBheg%3D%3D&utm_source=qr">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/srujana-adepu-756367259/">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Muskaan_Prod_Comm.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Muskaan</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="#">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/muskaan-yousuf-553218259">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top"
+                                        src="img/team_pics/T. Ashwitha_Priya_Production_Communication.jpeg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">T. Ashwitha Priya</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a
+                                                href="https://www.instagram.com/ashwitha_2005_?igsh=MW1kOHZna2d1OXJ1cw==">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="http://www.linkedin.com/in/ashwitha-priya-tama-00554b293">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Megna_Varma_Prod_Comm.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Megna Varma</h5>
-                                <p class="card-text">Co-Lead</p>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/kalluri_hansika_prod_comm.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">K.Hansika</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="https://www.instagram.com/_hansika_555?igsh=MXFubDh2ODNoYjJnMg==">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a
+                                                href="https://www.linkedin.com/in/hansikareddy?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/megna.varma31?igsh=MWJ6ZHQzaTFva2wyMg==">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a
-                                        href="https://www.linkedin.com/in/megana-laxmi-datla-5b0394259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Poojitha_Madishetty_prod_comm.PNG"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Poojitha Madishetty </h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a
+                                                href="https://www.instagram.com/_poojitha_6?igsh=MXZ0dzdzeWw4ejhtcA%3D%3D&utm_source=qr">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a
+                                                href="https://www.linkedin.com/in/poojitha-madishetty-1384082a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Madhuri_Popuri_Prod_Comm.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">P Madhuri</h5>
-                                <p class="card-text">Volunteer</p>
+                    </div> <br><br>
+                    <center>
+                        <h1 style="color:white;font-family: Times New Roman;font-weight:bold;font-size:600;">HOSPITALITY
+                            AND OPERATIONS
+                            TEAM</h1>
+                    </center><br><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/I_Bindu_Hospitality.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">I Bindu</h5>
+                                        <p class="card-text">Lead</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a
+                                                href="https://www.instagram.com/show_attitude_004/profilecard/?igsh=ZWF0NHJ2Z2FoMWcx">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a
+                                                href="https://www.linkedin.com/in/bindu-vahini-inturi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a
-                                        href="https://www.instagram.com/madhuri_chowdary_popuri?igsh=MTM5dGswMjNtbjFuOQ==">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/madhuri-popuri">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Saranya_G_Hospitality_team.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Saranya G</h5>
+                                        <p class="card-text">Co-Lead</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="https://www.instagram.com/saranyag_23?igsh=azQ4eWw5eGVtY20=">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/saranya-gunjuvari-61b417293/">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Shermee_Chowdary_Hospitality.jpeg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Shermee Chowdary</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="#">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/ravi-shermee-chowdary-150052259/">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <br><br>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/N_Sathvika_Production_Communication.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">N Sathvika</h5>
-                                <p class="card-text">Volunteer</p>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/T_Divya_Hospitality.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">T Divya</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="https://www.instagram.com/divyaa..25/">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="http://www.linkedin.com/in/tumma-divya-13970a259">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/sathvika_nethi?igsh=MWRreXZoYTZwdWtmdg==">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/nethi-sathvika-a7969a259/">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Ankitha E Hospitality.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">E. Ankitha</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="https://www.instagram.com/ankitha_613?igsh=dTZvdDZrc3E3azJu">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <!-- Add another card here if needed -->
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/K_Geethika_Chowdary_Hospitality.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">K.Geethika Chowdary</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href=" ">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a
+                                                href="https://www.linkedin.com/in/geethika-chowdary-koritala-7b503a259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Muskaan_Prod_Comm.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Muskaan</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="#">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/muskaan-yousuf-553218259">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/K.Yaamini_Padma_Reddy_Hospitality.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">K.Yaamini Padma Reddy</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="https://www.instagram.com/yaamini_21/?next=%2F&hl=en">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/k-yaamini-padma-reddy-902316259/">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top"
-                                src="../img/team_pics/T. Ashwitha_Priya_Production_Communication.jpeg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">T. Ashwitha Priya</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/ashwitha_2005_?igsh=MW1kOHZna2d1OXJ1cw==">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="http://www.linkedin.com/in/ashwitha-priya-tama-00554b293">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br><br>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/kalluri_hansika_prod_comm.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">K.Hansika</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/_hansika_555?igsh=MXFubDh2ODNoYjJnMg==">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a
-                                        href="https://www.linkedin.com/in/hansikareddy?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Poojitha_Madishetty_prod_comm.PNG"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Poojitha Madishetty </h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a
-                                        href="https://www.instagram.com/_poojitha_6?igsh=MXZ0dzdzeWw4ejhtcA%3D%3D&utm_source=qr">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a
-                                        href="https://www.linkedin.com/in/poojitha-madishetty-1384082a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <br><br>
-            <center>
-                <h1 style="color:white;font-family: Times New Roman;font-weight:bold;font-size:600;">HOSPITALITY
-                    AND
-                    OPERATIONS
-                    TEAM</h1>
-            </center><br><br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/I_Bindu_Hospitality.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">I Bindu</h5>
-                                <p class="card-text">Lead</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a
-                                        href="https://www.instagram.com/show_attitude_004/profilecard/?igsh=ZWF0NHJ2Z2FoMWcx">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a
-                                        href="https://www.linkedin.com/in/bindu-vahini-inturi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Saranya_G_Hospitality_team.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Saranya G</h5>
-                                <p class="card-text">Co-Lead</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/saranyag_23?igsh=azQ4eWw5eGVtY20=">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/saranya-gunjuvari-61b417293/">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Shermee_Chowdary_Hospitality.jpeg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Shermee Chowdary</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="#">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/ravi-shermee-chowdary-150052259/">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br><br>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/T_Divya_Hospitality.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">T Divya</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/divyaa..25/">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="http://www.linkedin.com/in/tumma-divya-13970a259">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Ankitha E Hospitality.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">E. Ankitha</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/ankitha_613?igsh=dTZvdDZrc3E3azJu">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <!-- Add another card here if needed -->
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/K_Geethika_Chowdary_Hospitality.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">K.Geethika Chowdary</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href=" ">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a
-                                        href="https://www.linkedin.com/in/geethika-chowdary-koritala-7b503a259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br><br>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/K.Yaamini_Padma_Reddy_Hospitality.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">K.Yaamini Padma Reddy</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/yaamini_21/?next=%2F&hl=en">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/k-yaamini-padma-reddy-902316259/">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <br><br>
+                    </div> <br><br>
 
-            <center>
-                <h1 style="color:white;font-family: Times New Roman;font-weight:bold;font-size:600;">MARKETING
-                    TEAM
-                </h1>
-            </center><br><br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Laxmi_Varshitha_Marketing.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Lakshmi Varshitha</h5>
-                                <p class="card-text">Lead</p>
+                    <center>
+                        <h1 style="color:white;font-family: Times New Roman;font-weight:bold;font-size:600;">MARKETING
+                            TEAM</h1>
+                    </center><br><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Laxmi_Varshitha_Marketing.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Lakshmi Varshitha</h5>
+                                        <p class="card-text">Lead</p>
+                                    </div>
+                                    <div class="card-body center center">
+                                        <div class="social">
+                                            <a href="https://www.instagram.com/varshitha_labala/?hl=en">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/laxmi-varshitha-2235a624b/">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body center center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/varshitha_labala/?hl=en">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/laxmi-varshitha-2235a624b/">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/K_Geetha_Reddy_Marketing.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">K Geetha Reddy</h5>
+                                        <p class="card-text">Co-Lead</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a
+                                                href="https://www.instagram.com/reddygeetha12?igsh=MWt4M21vazJ0NWJ2dg%3D%3D&utm_source=qr">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a
+                                                href="https://www.linkedin.com/in/kasturi-geetha-reddy-kasturi-7a394628b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/M_Vaishnavi_Prasad_Marketing.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Vaishnavi Prasad</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="https://www.instagram.com/vaishhh._04/">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/vaishnavi-prasad-m-246336300/">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/K_Geetha_Reddy_Marketing.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">K Geetha Reddy</h5>
-                                <p class="card-text">Co-Lead</p>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Akshitharajn_Marketing.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Akshitha Nagasani</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a
+                                                href="https://www.instagram.com/_akshitharajn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a
+                                                href="https://www.linkedin.com/in/akshitha-nagasani-bb683b287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a
-                                        href="https://www.instagram.com/reddygeetha12?igsh=MWt4M21vazJ0NWJ2dg%3D%3D&utm_source=qr">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a
-                                        href="https://www.linkedin.com/in/kasturi-geetha-reddy-kasturi-7a394628b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Shivani_Marketing.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">G Shivani</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="https://www.instagram.com/imshivxni?igsh=MTc5enR5NGtuNnV6dA==">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a
+                                                href="https://www.linkedin.com/in/gugloth-shivani-419659259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="img/team_pics/Ch.Manvitha_Marketing_team.jpeg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ch.Manvitha</h5>
+                                        <p class="card-text">Volunteer</p>
+                                    </div>
+                                    <div class="card-body center">
+                                        <div class="social">
+                                            <a href="https://www.instagram.com/_.manvithadutt/">
+                                                <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/manvitha-chowtapalli-665322259/">
+                                                <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div> <br><br>
+                    <div class="container mb-4">
+                        <br><br>
+                        <center>
+                            <p style="color: red;">Copyright © 2023 - TEDxBVRITH. All Rights Reserved</p>
+                        </center>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/M_Vaishnavi_Prasad_Marketing.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Vaishnavi Prasad</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/vaishhh._04/">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/vaishnavi-prasad-m-246336300/">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <br>
+                    <br>
                 </div>
-                <br><br>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Akshitharajn_Marketing.jpg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Akshitha Nagasani</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a
-                                        href="https://www.instagram.com/_akshitharajn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a
-                                        href="https://www.linkedin.com/in/akshitha-nagasani-bb683b287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Shivani_Marketing.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">G Shivani</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/imshivxni?igsh=MTc5enR5NGtuNnV6dA==">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a
-                                        href="https://www.linkedin.com/in/gugloth-shivani-419659259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/team_pics/Ch.Manvitha_Marketing_team.jpeg"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Ch.Manvitha</h5>
-                                <p class="card-text">Volunteer</p>
-                            </div>
-                            <div class="card-body center">
-                                <div class="social">
-                                    <a href="https://www.instagram.com/_.manvithadutt/">
-                                        <div class="ig"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/manvitha-chowtapalli-665322259/">
-                                        <div class="tw"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <br><br>
-            <div class="container mb-4">
-                <br><br>
-                <center>
-                    <p style="color: red;">Copyright © 2023 - TEDxBVRITH. All Rights Reserved</p>
-                </center>
-            </div>
-            <br>
-            <br>
-        </div>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
 </body>
 
 </html>
