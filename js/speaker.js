@@ -4,7 +4,7 @@ const profiles = {
             name: "Exciting Speakers Coming Soon!",
             role: "Stay Tuned for Big Announcements",
             description: "Our 2025 speaker lineup is currently under wraps, but we promise it's going to be incredible! Expect industry leaders, visionaries, and changemakers who will inspire and challenge the way we think about the future. Keep an eye on this space as we unveil our speakers one by one!",
-            image: "../img/media/cs.jpg"
+            image: "img/media/cs.jpg"
         }
     ],
     2024: [
