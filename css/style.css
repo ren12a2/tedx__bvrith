@@ -1161,3 +1161,15 @@ body.mobile-nav-active #mobile-nav-toggle {
 #splist {
   padding: 5px;
 }
+
+#mediaCarousel img {
+  max-height: 400px;
+  /* Adjust height as needed */
+  object-fit: cover;
+}
+
+.carousel-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
