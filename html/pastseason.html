@@ -71,17 +71,76 @@
 </head>
 
 <body>
-
-    <!-- Navbar -->
-    <div id="navbar-container"></div>
-    <script>
-        fetch('../html/navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-container').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navbar:', error));
-    </script>
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 60px;
+            background-color: black !important;
+            opacity: 0.85;
+        }
+    
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 1px 16px;
+            text-decoration: none;
+        }
+    
+        .nav-menu {
+            margin-top: 1.5rem;
+        }
+    
+        .responsive-logo {
+            height: 55px;
+            width: 350px;
+        }
+    
+        @media (max-width: 768px) {
+            .responsive-logo {
+                height: 45px;
+                width: 300px;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .responsive-logo {
+                height: 30px;
+                width: 200px;
+            }
+        }
+    </style>
+    
+    <header id="header navbar">
+        <div class="container">
+            <div id="logo" class="pull-left">
+                <h1 style="float: left"><a href="index.html"><img src="img/poster/tedx.jpg" class="responsive-logo"></a>
+                </h1>
+                </h1>
+            </div>
+            <nav style="float: right;" id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="html/team.html">Team</a></li>
+                    <li><a href="html/speakers.html">Speakers</a></li>
+                    <li><a href="html/pastseason.html">Past Season</a></li>
+                    <li>
+                        <form
+                            action="https://docs.google.com/forms/d/1x0r8qHoKBNAR-ZZk57FGWsvXq210hbM8qch7pGoARME/edit?ts=656f1f5d">
+                            <input type="submit" value="Buy Ticket"
+                                style="background-color:#E62B1E;color:white;border-color:#E62B1E;font-weight:bold;width:100px;height:36px;padding-top:3px;padding-left:3px;padding-right:3px;border-radius: 6px;">
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+            <!-- #nav-menu-container -->
+        </div>
+    </header>
 
     <div class="container">
         <h2>Past Season Highlights</h2>
