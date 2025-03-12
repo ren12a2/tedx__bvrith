@@ -90,6 +90,7 @@ function changeYear(year) {
                 <div>
                     <h2>${person.name}</h2>
                     <h4>${person.role}</h4>
+                    <br>
                     <p>${person.description}</p>
                 </div>
             </div>
