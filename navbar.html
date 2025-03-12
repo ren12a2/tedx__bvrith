@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<link href="css/style.css" rel="stylesheet">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TEDxBVRITHyderabad</title>
-  <link rel="stylesheet" href="../css/speaker.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
-    crossorigin="anonymous"></script>
-
-</head>
-
-<body>
-  <style>
+<style>
     .navbar {
         position: fixed;
         top: 0;
@@ -33,10 +21,10 @@
         text-decoration: none;
     }
 
-    .nav-menu {
-        margin-top: 1.5rem;
-    }
-
+    .nav-menu-container  {
+            margin-top: 1.5rem !important;
+        }
+    
     .responsive-logo {
         height: 55px;
         width: 350px;
@@ -66,10 +54,10 @@
         </div>
         <nav style="float: right;" id="nav-menu-container">
             <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="html/team.html">Team</a></li>
-                <li><a href="html/speakers.html">Speakers</a></li>
-                <li><a href="html/pastseason.html">Past Season</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="speakers.html">Speakers</a></li>
+                <li><a href="pastseason.html">Past Season</a></li>
                 <li>
                     <form
                         action="https://docs.google.com/forms/d/1x0r8qHoKBNAR-ZZk57FGWsvXq210hbM8qch7pGoARME/edit?ts=656f1f5d">
@@ -82,39 +70,3 @@
         <!-- #nav-menu-container -->
     </div>
 </header>
-  <div class="timeline-container">
-    <div class="timeline">
-      <ul>
-        <li onclick="changeYear(2025)" id="y-2025" class="active">2025</li>
-        <li onclick="changeYear(2024)" id="y-2024">2024</li>
-      </ul>
-    </div>
-
-    <div class="profile-container" id="profile-container">
-      <!-- Profiles will be loaded dynamically -->
-    </div>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <div id="footer-container"></div>
-  <script>
-    fetch('../html/footer.html') // Corrected path
-      .then(response => response.text())
-      .then(data => document.getElementById('footer-container').innerHTML = data);
-  </script>
-  <script src="../js/speaker.js"></script>
-
-</body>
-
-</html>
