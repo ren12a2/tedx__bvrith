@@ -1173,3 +1173,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   align-items: center;
   justify-content: center;
 }
+
+#footer-container {
+  margin: 40px;
+}
