@@ -280,84 +280,112 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
     </script>
-
-
-    <!-- WHY TEDx Section -->
-    <section id="why-tedx">
-        <div class="container">
-            <h2 class="section-title"><span class="highlight">WHY TEDx?</span></h2>
-            <p class="text">
-                TED, which stands for <span class="highlight">Technology, Entertainment, and Design</span>, is a
-                platform for infinite ideas. As an international nonprofit organization, TED thrives on creativity,
-                embracing diverse perspectives, and giving a voice to every idea—big or small. TEDx provides a stage for
-                speakers of all styles, backgrounds, and languages, encouraging them to share
-                insights ranging from groundbreaking business innovations to deeply personal life experiences.
-            </p>
-
-            <h2 class="section-title"><span class="highlight">WE THE BVRITH...</span></h2>
-            <p class="text">
-                In a world woven with countless perspectives, TEDxBVRITH stands as a platform where imagination meets
-                expression. Our speakers break open the caps of their minds, unleashing thoughts that challenge norms,
-                spark inspiration, and encourage fearless exploration.
-                At TEDxBVRITH, we believe in fostering that courage—the courage to challenge the unknown, to inspire
-                others, and to create an impact that lasts beyond the stage.
-            </p>
+    
+    <!-- Poster Section -->
+    <section id="poster-section">
+        <div class="image-container">
+            <img src="img/poster/tedx_poster_hd.png" alt="TEDx poster">
         </div>
     </section>
-
+    
     <style>
-        #why-tedx {
+        #poster-section {
+            text-align: center;
+            padding: 50px 0;
             background: black;
-            color: white;
-            padding: 100px 20px;
-            position: relative;
-            text-align: left;
-            overflow: hidden;
         }
-
-        #why-tedx::before {
-            content: "TEDx TEDx TEDx TEDx";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            font-size: 10rem;
-            font-weight: bold;
-            color: rgba(255, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-transform: uppercase;
-            transform: rotate(-30deg);
-            z-index: 0;
+    
+        .image-container img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px -10px 20px rgba(255, 0, 0, 0.6), /* Increased red glow on top */
+                        0px 4px 10px rgba(255, 0, 0, 0.5); /* Existing glow on bottom */
         }
-
-        .container {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .highlight {
-            color: red;
-        }
-
-        .text {
-            font-size: 2rem;
-            line-height: 1.8;
-            text-align: justify;
-            opacity: 0.6;
-            margin-bottom: 20px;
+    
+        @media (max-width: 768px) {
+            .image-container img {
+                max-width: 100%;
+            }
         }
     </style>
+
+<!-- WHY TEDx Section -->
+<section id="why-tedx">
+    <div class="container">
+        <h2 class="section-title"><span class="highlight">WHY TEDx?</span></h2>
+        <p class="text">
+            TED, which stands for <span class="highlight">Technology, Entertainment, and Design</span>, is a
+            platform for infinite ideas. As an international nonprofit organization, TED thrives on creativity,
+            embracing diverse perspectives, and giving a voice to every idea—big or small. TEDx provides a stage for
+            speakers of all styles, backgrounds, and languages, encouraging them to share
+            insights ranging from groundbreaking business innovations to deeply personal life experiences.
+        </p>
+
+        <h2 class="section-title"><span class="highlight">WE THE BVRITH...</span></h2>
+        <p class="text">
+            In a world woven with countless perspectives, TEDxBVRITH stands as a platform where imagination meets
+            expression. Our speakers break open the caps of their minds, unleashing thoughts that challenge norms,
+            spark inspiration, and encourage fearless exploration.
+            At TEDxBVRITH, we believe in fostering that courage—the courage to challenge the unknown, to inspire
+            others, and to create an impact that lasts beyond the stage.
+        </p>
+    </div>
+</section>
+
+<style>
+    #why-tedx {
+        background: black;
+        color: white;
+        padding: 100px 20px;
+        position: relative;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    #why-tedx::before {
+        content: "TEDx TEDx TEDx TEDx";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 10rem;
+        font-weight: bold;
+        color: rgba(255, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        transform: rotate(-30deg);
+        z-index: 0;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .highlight {
+        color: red;
+    }
+
+    .text {
+        font-size: 2rem;
+        line-height: 1.8;
+        text-align: justify;
+        opacity: 0.6;
+        margin-bottom: 20px;
+    }
+</style>
 
     <!-- Partners Section -->
     <section id="partners" style="background-color: black; padding: 50px 0; overflow: hidden; white-space: nowrap;">
